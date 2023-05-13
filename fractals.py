@@ -102,8 +102,8 @@ animation = FuncAnimation(fig, update, frames=max_iter, interval=100)
 # Save the animation as a video file
 print(f"Saving {'julia_fractal_animation.gif'}...")
 animation.save('julia_fractal_animation.gif', writer='pillow')
-plt.imsave(f'julia_fractal_{1}.png', mandelbrots[1], cmap='hot')
-plt.imsave(f'julia_fractal_{max_iter-1}.png', mandelbrots[max_iter-1], cmap='hot')
+plt.imsave(f'julia_fractal_{1}.png', julias[1], cmap='hot')
+plt.imsave(f'julia_fractal_{max_iter}.png', julias[max_iter], cmap='hot')
 # plt.show()
 
 def generate_burning_ship(width, height, xmin, xmax, ymin, ymax, max_iter):
