@@ -11,6 +11,7 @@ def generate_mandelbrot(width, height, xmin, xmax, ymin, ymax, max_iter):
     fractal = np.zeros(c.shape, dtype=int)
 
     for i in range(max_iter):
+        print("generate_mandelbrot", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] * z[mask] + c[mask]
         fractal += mask
@@ -30,9 +31,6 @@ def update(frame):
     ax.axis('off')
     fractal = generate_mandelbrot(width, height, xmin, xmax, ymin, ymax, frame)
     im = ax.imshow(fractal, cmap='hot', extent=(xmin, xmax, ymin, ymax))
-
-# Generate the Mandelbrot Set
-fractal = generate_mandelbrot(width, height, xmin, xmax, ymin, ymax, max_iter)
 
 # Create the figure and axes
 fig, ax = plt.subplots(figsize=(8, 8))
@@ -56,6 +54,7 @@ def generate_julia(width, height, xmin, xmax, ymin, ymax, max_iter, c):
     fractal = np.zeros(z.shape, dtype=int)
 
     for i in range(max_iter):
+        print("generate_julia", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] ** 2 + c
         fractal += mask
