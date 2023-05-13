@@ -12,13 +12,14 @@ def generate_mandelbrots(width: int, height: int, xmin: float, xmax: float, ymin
     c = X + 1j * Y
     z = np.zeros_like(c)
     fractal = np.zeros(c.shape, dtype=int)
+    fractals[0] = fractal
 
     for i in range(max_iter):
         if i % 100 == 0 or i == max_iter-1: print("generate_mandelbrots", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] * z[mask] + c[mask]
         fractal += mask
-        fractals[i] = fractals
+        fractals[i+1] = fractal
 
     return fractals
 
@@ -35,8 +36,7 @@ def update(frame):
     ax.clear()
     ax.set_title("Mandelbrot Set (Iteration {})".format(frame))
     ax.axis('off')
-    fractal = mandelbrots[frame]
-    im = ax.imshow(fractal, cmap='hot', extent=(xmin, xmax, ymin, ymax))
+    im = ax.imshow(mandelbrots[frame], cmap='hot', extent=(xmin, xmax, ymin, ymax))
 
 # Create the figure and axes
 fig, ax = plt.subplots(figsize=(8, 8))
@@ -46,8 +46,9 @@ ax.set_ylabel("Im(c)")
 
 # Plot the fractal
 # Create the animation
-animation = FuncAnimation(fig, update, frames=max_iter+1, interval=100)
+animation = FuncAnimation(fig, update, frames=max_iter, interval=100)
 # Save the animation as a video file
+print(f"Saving {'mandelbroth_fractal_animation.gif'}...")
 animation.save('mandelbroth_fractal_animation.gif', writer='pillow')
 plt.show()
 
@@ -58,13 +59,14 @@ def generate_julias(width, height, xmin, xmax, ymin, ymax, max_iter, c):
     X, Y = np.meshgrid(x, y)
     z = X + 1j * Y
     fractal = np.zeros(z.shape, dtype=int)
+    fractals[0] = fractal
 
     for i in range(max_iter):
         if i % 100 == 0 or i == max_iter-1: print("generate_julia", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] ** 2 + c
         fractal += mask
-        fractals[i] = fractal
+        fractals[i+1] = fractal
 
     return fractals
 
@@ -93,8 +95,9 @@ def update(frame):
     im = ax.imshow(fractal, cmap='hot', extent=(xmin, xmax, ymin, ymax))
 
 # Create the animation
-animation = FuncAnimation(fig, update, frames=max_iter+1, interval=100)
+animation = FuncAnimation(fig, update, frames=max_iter, interval=100)
 # Save the animation as a video file
+print(f"Saving {'julia_fractal_animation.gif'}...")
 animation.save('julia_fractal_animation.gif', writer='pillow')
 plt.show()
 
