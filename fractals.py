@@ -1,8 +1,11 @@
 import numpy as np
+from numpy import array
+from typing import Dict
 import matplotlib.pyplot as plt
 from matplotlib.animation import FuncAnimation
 
-def generate_mandelbrot(width, height, xmin, xmax, ymin, ymax, max_iter):
+def generate_mandelbrots(width: int, height: int, xmin: float, xmax: float, ymin: float, ymax: float, max_iter: int) -> Dict[int, array]:
+    fractals: Dict[int, array] = {}
     x = np.linspace(xmin, xmax, width)
     y = np.linspace(ymin, ymax, height)
     X, Y = np.meshgrid(x, y)
@@ -11,12 +14,13 @@ def generate_mandelbrot(width, height, xmin, xmax, ymin, ymax, max_iter):
     fractal = np.zeros(c.shape, dtype=int)
 
     for i in range(max_iter):
-        print("generate_mandelbrot", i, max_iter)
+        if i % 100 == 0 or i == max_iter-1: print("generate_mandelbrots", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] * z[mask] + c[mask]
         fractal += mask
+        fractals[i] = fractals
 
-    return fractal
+    return fractals
 
 # Set the desired parameters
 width, height = 3840, 2160
@@ -24,12 +28,14 @@ xmin, xmax = -2.5, 1.5
 ymin, ymax = -2, 2
 max_iter = 3000
 
+mandelbrots: Dict[int, array] = generate_mandelbrots(width, height, xmin, xmax, ymin, ymax, max_iter)
+
 # Update function for each frame of the animation
 def update(frame):
     ax.clear()
     ax.set_title("Mandelbrot Set (Iteration {})".format(frame))
     ax.axis('off')
-    fractal = generate_mandelbrot(width, height, xmin, xmax, ymin, ymax, frame)
+    fractal = mandelbrots[frame]
     im = ax.imshow(fractal, cmap='hot', extent=(xmin, xmax, ymin, ymax))
 
 # Create the figure and axes
@@ -45,8 +51,8 @@ animation = FuncAnimation(fig, update, frames=max_iter+1, interval=100)
 animation.save('mandelbroth_fractal_animation.gif', writer='pillow')
 plt.show()
 
-
-def generate_julia(width, height, xmin, xmax, ymin, ymax, max_iter, c):
+def generate_julias(width, height, xmin, xmax, ymin, ymax, max_iter, c):
+    fractals: Dict[int, array] = {}
     x = np.linspace(xmin, xmax, width)
     y = np.linspace(ymin, ymax, height)
     X, Y = np.meshgrid(x, y)
@@ -54,12 +60,14 @@ def generate_julia(width, height, xmin, xmax, ymin, ymax, max_iter, c):
     fractal = np.zeros(z.shape, dtype=int)
 
     for i in range(max_iter):
-        print("generate_julia", i, max_iter)
+        if i % 100 == 0 or i == max_iter-1: print("generate_julia", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] ** 2 + c
         fractal += mask
+        fractals[i] = fractal
 
-    return fractal
+    return fractals
+
 # Set the desired parameters
 width, height = 3840, 2160
 xmin, xmax = -2, 2
@@ -68,6 +76,8 @@ max_iter = 10000
 
 # Define the constant for the Julia Set
 c = -0.8 + 0.156j
+
+julias: Dict[int, array] = generate_julias(width, height, xmin, xmax, ymin, ymax, max_iter, c)
 
 # Create the figure and axes
 fig, ax = plt.subplots(figsize=(8, 8))
@@ -79,7 +89,7 @@ def update(frame):
     ax.clear()
     ax.set_title("Julia Set (Iteration {})".format(frame))
     ax.axis('off')
-    fractal = generate_julia(width, height, xmin, xmax, ymin, ymax, frame, c)
+    fractal = julias[frame]
     im = ax.imshow(fractal, cmap='hot', extent=(xmin, xmax, ymin, ymax))
 
 # Create the animation

@@ -68,7 +68,7 @@ Exploring and studying fractals can provide insights into the underlying structu
 
 **Note: (written by ChatGPT)**
 
-## How Fractal Algorithms Work (written by ChatGPT)
+## How Fractal Algorithms Work
 Fractal algorithms work by iteratively applying a set of mathematical rules or transformations to generate complex and self-repeating patterns. These algorithms typically operate on a discrete grid or set of points and use recursion or iteration to create intricate fractal structures.
 
 Here is a general overview of how fractal algorithms work:
