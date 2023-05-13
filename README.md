@@ -14,7 +14,7 @@
     <img src="https://github.com/jtcass01/StatusLogger/blob/master/images/StatueOfLiberty_StarryNightVanGogh_ImageTransfer.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">Fractal Lab</h3>
+  <h3 align="center">Welcome to the Fractal Lab, a Python platform for exploring and generating mesmerizing fractal patterns. This repository provides a collection of fractal algorithms and interactive tools to help you dive into the fascinating world of fractals.</h3>
 
   <p align="center">
     Fun with fractals.
@@ -36,12 +36,8 @@
 <details open="open">
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
+    <li><a href="#what-are-fractals">What are Fractals</a></li>
+    <li><a href="#how-fractal-algorithms-work">How Fractal Algorithms Work</a></li>
     <li>
       <a href="#getting-started">Getting Started</a>
       <ul>
@@ -58,11 +54,8 @@
   </ol>
 </details>
 
-<!-- ABOUT THE PROJECT -->
-## About The Project
-Welcome to the Fractal Lab, a Python platform for exploring and generating mesmerizing fractal patterns. This repository provides a collection of fractal algorithms and interactive tools to help you dive into the fascinating world of fractals.
 
-## What are Fractals (written by ChatGPT)
+## What are Fractals
 Fractals are complex and intricate geometric patterns that exhibit self-similarity at different scales. They are created through the repetition of a simple mathematical process or algorithm. Fractals are characterized by their intricate detail and infinite complexity, even though they are created from simple rules.
 
 Fractals can be generated using iterative processes, where a basic shape or pattern is repeatedly transformed or replicated according to specific rules. The iteration continues indefinitely or until a certain condition is met. As the process repeats, the pattern evolves and becomes increasingly complex, often exhibiting self-similarity, meaning that smaller portions of the fractal resemble the larger whole.
@@ -73,7 +66,10 @@ Fractal geometry has many interesting properties, such as infinite detail, non-i
 
 Exploring and studying fractals can provide insights into the underlying structures and processes that govern complex systems in nature and mathematics. They also offer a creative and visually appealing way to explore mathematical concepts and generate aesthetically pleasing patterns and images.
 
-## How do Fractal Algorithms Work (written by ChatGPT)
+**Note**
+(written by ChatGPT)
+
+## How Fractal Algorithms Work (written by ChatGPT)
 Fractal algorithms work by iteratively applying a set of mathematical rules or transformations to generate complex and self-repeating patterns. These algorithms typically operate on a discrete grid or set of points and use recursion or iteration to create intricate fractal structures.
 
 Here is a general overview of how fractal algorithms work:
@@ -86,6 +82,9 @@ Here is a general overview of how fractal algorithms work:
 Different types of fractals, such as the Mandelbrot set, Julia sets, Sierpinski triangle, and Koch snowflake, have their own specific algorithms and rules for generating their unique structures. However, the general principles of iteration, recursion, and transformation are common to many fractal algorithms.
 
 Fractal algorithms provide a way to generate complex and visually appealing patterns, explore self-similarity, and discover the intricate nature of mathematical and natural phenomena. They have applications in various fields, including mathematics, computer graphics, art, and science.
+
+**Note**
+(written by ChatGPT)
 
 <!-- GETTING STARTED -->
 ## Getting Started
