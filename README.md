@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jtcass01/FractalLab">
-    <img src="https://github.com/jtcass01/StatusLogger/blob/master/images/StatueOfLiberty_StarryNightVanGogh_ImageTransfer.png" alt="Logo" width="80" height="80">
+    <img src="https://github.com/jtcass01/StatusLogger/blob/master/images/StatueOfLiberty_StarryNightVanGogh_ImageTransfer.png" alt="Logo">
   </a>
 
   <h3 align="center">Welcome to the Fractal Lab, a Python platform for exploring and generating mesmerizing fractal patterns. This repository provides a collection of fractal algorithms and interactive tools to help you dive into the fascinating world of fractals.</h3>
