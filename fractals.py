@@ -2,6 +2,7 @@ import numpy as np
 from numpy import array
 from typing import Dict
 import matplotlib.pyplot as plt
+from copy import copy
 from matplotlib.animation import FuncAnimation
 
 def generate_mandelbrots(width: int, height: int, xmin: float, xmax: float, ymin: float, ymax: float, max_iter: int) -> Dict[int, array]:
@@ -12,14 +13,14 @@ def generate_mandelbrots(width: int, height: int, xmin: float, xmax: float, ymin
     c = X + 1j * Y
     z = np.zeros_like(c)
     fractal = np.zeros(c.shape, dtype=int)
-    fractals[0] = fractal
+    fractals[0] = copy(fractal)
 
     for i in range(max_iter):
         if i % 100 == 0 or i == max_iter-1: print("generate_mandelbrots", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] * z[mask] + c[mask]
         fractal += mask
-        fractals[i+1] = fractal
+        fractals[i+1] = copy(fractal)
 
     return fractals
 
@@ -27,7 +28,7 @@ def generate_mandelbrots(width: int, height: int, xmin: float, xmax: float, ymin
 width, height = 3840, 2160
 xmin, xmax = -2.5, 1.5
 ymin, ymax = -2, 2
-max_iter = 3000
+max_iter = 200
 
 mandelbrots: Dict[int, array] = generate_mandelbrots(width, height, xmin, xmax, ymin, ymax, max_iter)
 
@@ -48,9 +49,11 @@ ax.set_ylabel("Im(c)")
 # Create the animation
 animation = FuncAnimation(fig, update, frames=max_iter, interval=100)
 # Save the animation as a video file
-print(f"Saving {'mandelbroth_fractal_animation.gif'}...")
-animation.save('mandelbroth_fractal_animation.gif', writer='pillow')
-plt.show()
+print(f"Saving {'mandelbrot_fractal_animation.gif'}...")
+animation.save('mandelbrot_fractal_animation.gif', writer='pillow')
+plt.imsave(f'mandelbrot_fractal_{1}.png', mandelbrots[1], cmap='hot')
+plt.imsave(f'mandelbrot_fractal_{max_iter}.png', mandelbrots[max_iter], cmap='hot')
+# plt.show()
 
 def generate_julias(width, height, xmin, xmax, ymin, ymax, max_iter, c):
     fractals: Dict[int, array] = {}
@@ -59,14 +62,14 @@ def generate_julias(width, height, xmin, xmax, ymin, ymax, max_iter, c):
     X, Y = np.meshgrid(x, y)
     z = X + 1j * Y
     fractal = np.zeros(z.shape, dtype=int)
-    fractals[0] = fractal
+    fractals[0] = copy(fractal)
 
     for i in range(max_iter):
         if i % 100 == 0 or i == max_iter-1: print("generate_julia", i, max_iter)
         mask = np.abs(z) < 2
         z[mask] = z[mask] ** 2 + c
         fractal += mask
-        fractals[i+1] = fractal
+        fractals[i+1] = copy(fractal)
 
     return fractals
 
@@ -74,7 +77,7 @@ def generate_julias(width, height, xmin, xmax, ymin, ymax, max_iter, c):
 width, height = 3840, 2160
 xmin, xmax = -2, 2
 ymin, ymax = -2, 2
-max_iter = 10000
+max_iter = 500
 
 # Define the constant for the Julia Set
 c = -0.8 + 0.156j
@@ -99,7 +102,9 @@ animation = FuncAnimation(fig, update, frames=max_iter, interval=100)
 # Save the animation as a video file
 print(f"Saving {'julia_fractal_animation.gif'}...")
 animation.save('julia_fractal_animation.gif', writer='pillow')
-plt.show()
+plt.imsave(f'julia_fractal_{1}.png', mandelbrots[1], cmap='hot')
+plt.imsave(f'julia_fractal_{max_iter-1}.png', mandelbrots[max_iter-1], cmap='hot')
+# plt.show()
 
 def generate_burning_ship(width, height, xmin, xmax, ymin, ymax, max_iter):
     x = np.linspace(xmin, xmax, width)

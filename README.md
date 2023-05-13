@@ -110,7 +110,15 @@ Use this space to show useful examples of how a project can be used. Additional 
 
 _For more examples, please refer to the [Documentation](https://example.com)_
 
+## Examples
 
+### Mandelbroth set
+
+<img src="https://github.com/jtcass01/FractalLab/blob/master/mandelbrot_fractal_animation.gif" alt="mandelbroth_fractal_animation">
+
+### Julia set
+
+<img src="https://github.com/jtcass01/FractalLab/blob/master/julia_fractal_animation.gif" alt="julia_fractal_animation">
 
 <!-- ROADMAP -->
 ## Roadmap
