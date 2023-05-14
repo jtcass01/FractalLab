@@ -11,7 +11,7 @@
 <br />
 <p align="center">
   <a href="https://github.com/jtcass01/FractalLab">
-    <img src="https://github.com/jtcass01/StatusLogger/blob/master/images/StatueOfLiberty_StarryNightVanGogh_ImageTransfer.png" alt="Logo">
+    <img src="https://github.com/jtcass01/FractalLab/blob/master/resources/logo.png" alt="Logo">
   </a>
 
   <h3 align="center">Fractal Lab</h3>
@@ -114,11 +114,23 @@ _For more examples, please refer to the [Documentation](https://example.com)_
 
 ### Mandelbroth set
 
-<img src="https://github.com/jtcass01/FractalLab/blob/master/mandelbrot_fractal_animation.gif" alt="mandelbroth_fractal_animation">
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/mandelbrot_fractal_animation.gif" alt="mandelbroth_fractal_animation">
+
+#### Iteration 1
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/mandelbrot_fractal_1.png" alt="mandelbroth_fractal_1">
+
+#### Iteration 200
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/mandelbrot_fractal_200.png" alt="mandelbroth_fractal_200">
 
 ### Julia set
 
-<img src="https://github.com/jtcass01/FractalLab/blob/master/julia_fractal_animation.gif" alt="julia_fractal_animation">
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/julia_fractal_animation.gif" alt="julia_fractal_animation">
+
+#### Iteration 1
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/julia_fractal_1.png" alt="julia_fractal_1">
+
+#### Iteration 500
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/julia_fractal_500.png" alt="julia_fractal_500">
 
 <!-- ROADMAP -->
 ## Roadmap
