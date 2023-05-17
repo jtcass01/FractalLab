@@ -22,7 +22,7 @@
     <a href="https://github.com/jtcass01/FractalLab"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-<!-- PROJECT LOGO 
+<!-- PROJECT LOGO
     <a href="https://github.com/jtcass01/FractalLab">View Demo</a>
     ·-->
     <a href="https://github.com/jtcass01/FractalLab/issues">Report Bug</a>
@@ -97,40 +97,87 @@ To get a local copy up and running follow these simple steps.
 ### Installation
 
 1. Clone the repo
-   ```sh
-   git clone https://github.com/jtcass01/FractalLab.git
-   ```
+```sh
+git clone https://github.com/jtcass01/FractalLab.git
+```
 
 
 
 <!-- USAGE EXAMPLES -->
-## Usage
-
-Use this space to show useful examples of how a project can be used. Additional screenshots, code examples and demos work well in this space. You may also link to more resources.
-
-_For more examples, please refer to the [Documentation](https://example.com)_
-
-## Examples
-
-### Mandelbroth set
-
-<img src="https://github.com/jtcass01/FractalLab/blob/master/output/mandelbrot_fractal_animation.gif" alt="mandelbroth_fractal_animation">
-
-#### Iteration 1
-<img src="https://github.com/jtcass01/FractalLab/blob/master/output/mandelbrot_fractal_1.png" alt="mandelbroth_fractal_1">
-
-#### Iteration 200
-<img src="https://github.com/jtcass01/FractalLab/blob/master/output/mandelbrot_fractal_200.png" alt="mandelbroth_fractal_200">
+## Usage Examples
 
 ### Julia set
 
-<img src="https://github.com/jtcass01/FractalLab/blob/master/output/julia_fractal_animation.gif" alt="julia_fractal_animation">
+```python
+from FractalLab import Julia
+
+# Set the desired parameters
+width, height = 1000, 1000
+xmin, xmax = -2, 2
+ymin, ymax = -2, 2
+max_iter = 100
+cmap = 'gist_stern'
+
+julia_set: Julia = Julia(width=width, height=height, xmin=xmin, xmax=xmax,
+                         ymin=ymin, ymax=ymax, constant=Julia.KNOWN_CONSTANTS[-1])
+julia_set.animate(iterations=100, cmap=cmap, xmin=xmin, xmax=xmax,
+                  ymin=ymin, ymax=ymax)
+```
+
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/Julia/julia_fractal_animation.gif" alt="julia_fractal_animation">
 
 #### Iteration 1
-<img src="https://github.com/jtcass01/FractalLab/blob/master/output/julia_fractal_1.png" alt="julia_fractal_1">
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/Julia/julia_fractal_1.png" alt="julia_fractal_1">
 
 #### Iteration 500
-<img src="https://github.com/jtcass01/FractalLab/blob/master/output/julia_fractal_500.png" alt="julia_fractal_500">
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/Julia/julia_fractal_500.png" alt="julia_fractal_500">
+
+### Mandelbrot set
+
+```python
+from FractalLab import Mandelbrot
+
+# Set the desired parameters
+width, height = 2000, 2000
+xmin, xmax = -2.5, 1.5
+ymin, ymax = -2, 2
+max_iter = 200
+cmap = 'gist_stern'
+
+mandelbrot_test: Mandelbrot = \
+    Mandelbrot(width=width, height=height, xmin=xmin,
+                xmax=xmax, ymin=ymin, ymax=ymax)
+mandelbrot_test.animate(iterations=100, cmap=cmap, xmin=xmin,
+                        xmax=xmax, ymin=ymin, ymax=ymax)
+```
+
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/Mandelbrot/mandelbrot_fractal_animation.gif" alt="mandelbrot_fractal_animation">
+
+#### Iteration 1
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/Mandelbrot/mandelbrot_fractal_1.png" alt="mandelbrot_fractal_1">
+
+#### Iteration 200
+<img src="https://github.com/jtcass01/FractalLab/blob/master/output/Mandelbrot/mandelbrot_fractal_200.png" alt="mandelbrot_fractal_200">
+
+### Burning Ship set
+
+```python
+from FractalLab import BurningShip
+
+# Set the desired parameters
+width, height = 2000, 2000
+xmin, xmax = -2, 2
+ymin, ymax = -2, 2
+max_iter = 100
+cmap = 'inferno'
+
+burning_ship_test: BurningShip = BurningShip(width=width, height=height,
+                                              xmin=xmin, xmax=xmax,
+                                              ymin=ymin, ymax=ymax)
+burning_ship_test.animate(iterations=100, cmap=cmap,
+                          xmin=xmin, xmax=xmax,
+                          ymin=ymin, ymax=ymax)
+```
 
 <!-- ROADMAP -->
 ## Roadmap
