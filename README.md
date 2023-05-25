@@ -235,10 +235,7 @@ Project Link: [https://github.com/jtcass01/FractalLab](https://github.com/jtcass
 <!-- ACKNOWLEDGEMENTS -->
 ## Acknowledgements
 
-* []()
-* []()
-* []()
-
+- **OpenAI's ChatGPT:** For providing insightful and prompt responses to questions and problems encountered during the development of this project. The AI also greatly assisted in generating comments and documentation, making the code more readable and maintainable. Please note, this acknowledgement was also drafted with assistance from ChatGPT. [OpenAI](https://www.openai.com/)
 
 
 
